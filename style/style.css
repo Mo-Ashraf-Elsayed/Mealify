@@ -1,0 +1,719 @@
+* {
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+:root {
+  --lightModeColor1: white;
+  --lightModeColor2: #eee;
+  --lightModeColor3: #ce1212;
+  --ligntModeColor3Hover: #e61414;
+  --darkModeColor1: #171717;
+  --darkModeColor2: #252525;
+  --darkModeColor3: #c17e1f;
+  --darkModeColor3Hover: #d78c23;
+  --weirdFont: "Amatic SC", sans-serif;
+  --heightOfHeader: 90px;
+  scroll-padding-top: var(--heightOfHeader);
+  scroll-behavior: smooth;
+}
+/*Change style of text when we select it*/
+::selection {
+  background-color: var(--lightModeColor3, #ce1212);
+  color: var(--lightModeColor1, white);
+}
+/*Scroll Style*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: #ccc;
+  box-shadow: inset 0 0 2px grey;
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--darkModeColor2, #252525);
+  border-radius: 15px;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: var(--darkModeColor1, #171717);
+}
+.weirdFont {
+  color: var(--lightModeColor3, #ce1212);
+  font-family: var(--weirdFont, "Amatic SC", sans-serif);
+}
+.title {
+  color: gray;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 400;
+}
+h3 {
+  font-family: var(--weirdFont, "Amatic SC", sans-serif);
+  text-align: center;
+  font-size: 50px;
+  margin: 0;
+  font-weight: 400;
+}
+h3 span {
+  color: var(--lightModeColor3, #ce1212);
+}
+
+.container {
+  width: 85%;
+  margin: auto;
+}
+/*Navbar*/
+.header {
+  background-color: var(--lightModeColor1);
+  width: 100%;
+  height: var(--heightOfHeader);
+  box-shadow: 5px 5px 23px -30px black;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+.header .flexHeader {
+  display: flex;
+}
+.header .flexHeader > div,
+.header .flexHeader > ul {
+  width: calc(100% / 3);
+}
+.header .flexHeader .logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.header .flexHeader .logo a h1 {
+  font-size: 30px;
+}
+.header .flexHeader .logo a h1 span {
+  color: var(--lightModeColor3, #ce1212);
+}
+.header .flexHeader ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .flexHeader ul a li {
+  padding: 10px 0 7px;
+  margin: 10px;
+  position: relative;
+  color: gray;
+  font-size: 17px;
+  font-weight: 600;
+}
+.header .flexHeader ul a li:hover,
+.header .flexHeader ul a:focus li {
+  color: var(--darkModeColor1);
+}
+.header .flexHeader ul a li::after {
+  content: "";
+  height: 3px;
+  background-color: var(--lightModeColor3);
+  width: 0%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: all 0.5s;
+}
+.header .flexHeader ul a li:hover::after,
+.header .flexHeader ul a:focus li::after {
+  width: 100%;
+}
+
+.header .flexHeader .darkAndLightMood {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 25px;
+  font-weight: 900;
+}
+.header .flexHeader .darkAndLightMood a.dark {
+  display: none;
+}
+.header .flexHeader .menuTag {
+  display: none;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-weight: 900;
+}
+/*Home*/
+.homeArea {
+  margin-top: var(--heightOfHeader, 70px);
+  background-color: var(--lightModeColor2, #eee);
+  height: calc(100vh - var(--heightOfHeader));
+}
+.homeArea .flexHomeArea {
+  padding: 50px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.homeArea .flexHomeArea .content {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-start;
+  flex-flow: wrap;
+}
+.homeArea .flexHomeArea .content h2 {
+  width: 70%;
+  font-family: var(--weirdFont, "Amatic SC", sans-serif);
+  font-weight: 700;
+  font-size: 65px;
+  margin: 0;
+}
+.homeArea .flexHomeArea .content p {
+  width: 80%;
+  color: gray;
+  margin-bottom: 50px;
+  margin-top: 25px;
+}
+.homeArea .flexHomeArea .content .btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.homeArea .flexHomeArea .content .btns .idBtn {
+  color: var(--lightModeColor1, white);
+  background-color: var(--lightModeColor3, #ce1212);
+  padding: 10px 25px;
+  border-radius: 20px;
+  border-top-left-radius: 0px;
+  font-size: 15px;
+  font-weight: 400;
+  margin-right: 30px;
+  transition: background-color 0.5s;
+}
+.homeArea .flexHomeArea .content .btns .idBtn:hover {
+  background-color: var(--ligntModeColor3Hover, #e61414);
+}
+.homeArea .flexHomeArea .content .btns .videoBtn {
+  font-weight: 600;
+}
+.homeArea .flexHomeArea .content .btns .videoBtn span {
+  display: inline-block;
+  border-radius: 50%;
+  background: linear-gradient(
+    90deg,
+    var(--lightModeColor3, #ce1212) 50%,
+    transparent 50%
+  );
+  padding: 7px;
+  transition: all 0.5s;
+}
+.homeArea .flexHomeArea .content .btns .videoBtn span i {
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: var(--lightModeColor1, white);
+}
+.homeArea .flexHomeArea .content .btns .videoBtn:hover {
+  color: var(--ligntModeColor3Hover, #e61414);
+}
+
+.homeArea .flexHomeArea .content .btns .videoBtn:hover span {
+  background-image: linear-gradient(
+    90deg,
+    var(--ligntModeColor3Hover, #e61414) 50%,
+    transparent 50%
+  );
+}
+.homeArea .flexHomeArea .photo {
+  width: 40%;
+  display: flex;
+  align-items: center;
+}
+.homeArea .flexHomeArea .photo img {
+  width: 100%;
+  filter: drop-shadow(0 0 10px black);
+  transition: all 0.4s;
+}
+.homeArea .flexHomeArea .photo img:hover {
+  animation-name: vibration;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+/*Animation To vibrate The Dish photo in Home Area*/
+@keyframes vibration {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+/*Chefs*/
+.chefsArea {
+  padding: var(--heightOfHeader, 90px) 0;
+}
+.chefsArea .flexChefsArea {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 50px;
+}
+
+.chefsArea .flexChefsArea .masterChef,
+.chefsArea .flexChefsArea .patissier,
+.chefsArea .flexChefsArea .cook {
+  width: calc(95% / 3);
+  border-radius: 10px;
+  box-shadow: 0 0 20px 0px gray;
+  transition: all 0.5s;
+  position: relative;
+  overflow: hidden;
+}
+.chefsArea .flexChefsArea .masterChef:hover,
+.chefsArea .flexChefsArea .patissier:hover,
+.chefsArea .flexChefsArea .cook:hover {
+  transform: scale(1.05);
+}
+
+.chefsArea .flexChefsArea .masterChef .chefsPhotos img,
+.chefsArea .flexChefsArea .patissier .chefsPhotos img,
+.chefsArea .flexChefsArea .cook .chefsPhotos img {
+  width: 100%;
+  border-radius: 10px;
+}
+.chefsArea .flexChefsArea .masterChef .chefsPhotos,
+.chefsArea .flexChefsArea .patissier .chefsPhotos,
+.chefsArea .flexChefsArea .cook .chefsPhotos {
+  position: relative;
+}
+.chefsArea .flexChefsArea .masterChef .chefsPhotos .wavyLayer,
+.chefsArea .flexChefsArea .patissier .chefsPhotos .wavyLayer,
+.chefsArea .flexChefsArea .cook .chefsPhotos .wavyLayer {
+  background-image: url(../images/team-shape.svg);
+  background-repeat: repeat-x;
+  background-position: bottom left;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 60px;
+}
+.chefsArea .flexChefsArea .masterChef .icons,
+.chefsArea .flexChefsArea .patissier .icons,
+.chefsArea .flexChefsArea .cook .icons {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 30px;
+  right: -50px;
+  background-color: rgba(255, 255, 255, 0.501);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  transition-duration: 0.5s;
+  transition-property: all;
+}
+.chefsArea .flexChefsArea .masterChef:hover .icons,
+.chefsArea .flexChefsArea .patissier:hover .icons,
+.chefsArea .flexChefsArea .cook:hover .icons {
+  transition-delay: 0.5s;
+  right: 15px;
+}
+.chefsArea .flexChefsArea div .icons a i {
+  color: gray;
+  margin: 10px 0;
+  font-size: 20px;
+  transition: all 0.5s;
+}
+.chefsArea .flexChefsArea div .icons a i:hover {
+  color: black;
+}
+.chefsArea .flexChefsArea div .aboutChef {
+  text-align: center;
+  padding: 5px;
+}
+.chefsArea .flexChefsArea div .aboutChef h4 {
+  margin: 0;
+  font-size: 20px;
+}
+.chefsArea .flexChefsArea div .aboutChef .job,
+.chefsArea .flexChefsArea div .aboutChef .hintAboutChef {
+  color: gray;
+}
+.chefsArea .flexChefsArea div .aboutChef .hintAboutChef {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  font-style: italic;
+}
+/*Gallery*/
+.galleryArea {
+  background-color: var(--lightModeColor2, #eee);
+  padding: var(--heightOfHeader, 90px) 0;
+}
+.galleryArea .gridGalleryArea {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  grid-template-areas:
+    "pizza beefSteaks burger"
+    "pizza beefSteaks burger"
+    "pizza beefSteaks burger"
+    "levitationPizza beefSteaks crispyFriedChicken"
+    "levitationPizza beefSteaks crispyFriedChicken"
+    "levitationPizza beefSteaks crispyFriedChicken"
+    "levitationPizza beefSteaks kebab"
+    "levitationPizza frittata kebab"
+    "levitationPizza frittata kebab"
+    ". frittata kebab"
+    ". frittata .";
+  gap: 1rem;
+  padding-top: 50px;
+}
+.galleryArea .gridGalleryArea .pizza {
+  grid-area: pizza;
+  background-color: red;
+}
+.galleryArea .gridGalleryArea .levitationPizza {
+  grid-area: levitationPizza;
+  background-color: red;
+}
+.galleryArea .gridGalleryArea .beefSteaks {
+  grid-area: beefSteaks;
+  background-color: red;
+}
+.galleryArea .gridGalleryArea .frittata {
+  grid-area: frittata;
+  background-color: red;
+}
+.galleryArea .gridGalleryArea .burger {
+  grid-area: burger;
+  background-color: red;
+}
+.galleryArea .gridGalleryArea .crispyFriedChicken {
+  grid-area: crispyFriedChicken;
+  background-color: red;
+}
+.galleryArea .gridGalleryArea .kebab {
+  grid-area: kebab;
+  background-color: red;
+}
+
+.galleryArea .gridGalleryArea div > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.galleryArea .gridGalleryArea > div {
+  border: solid 5px var(--lightModeColor1, white);
+  position: relative;
+  overflow: hidden;
+}
+.galleryArea .gridGalleryArea div .content {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  position: absolute;
+  inset: 0;
+  top: 120%;
+  background-color: rgba(0, 0, 0, 0.408);
+  color: var(--lightModeColor1, white);
+  transition: all 0.5s;
+}
+.galleryArea .gridGalleryArea div:hover .content {
+  top: 0;
+}
+.galleryArea .gridGalleryArea div .content p {
+  margin: 0;
+}
+.galleryArea .gridGalleryArea div .content .head {
+  font-size: 25px;
+  font-weight: bold;
+}
+/*Contact*/
+.contactArea {
+  padding: var(--heightOfHeader, 90px) 0;
+}
+.contactArea .flexContactArea .iframeLocation {
+  margin: 50px 0;
+}
+.contactArea .flexContactArea .iframeLocation iframe {
+  width: 100%;
+}
+.contactArea .flexContactArea .contactInfo {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+}
+.contactArea .flexContactArea .contactInfo > div {
+  width: calc(98.5% / 2);
+  background-color: var(--lightModeColor2, #eee);
+  margin-bottom: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+.contactArea .flexContactArea .contactInfo div .icons2 {
+  background-color: var(--lightModeColor3, #ce1212);
+  color: var(--lightModeColor1, white);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+.contactArea .flexContactArea .contactInfo div .info {
+  width: calc(100% - 60px);
+}
+.contactArea .flexContactArea .contactInfo .email1 .info .valueInfo {
+  overflow-wrap: break-word;
+}
+.contactArea .flexContactArea .contactInfo div .info p {
+  margin: 0;
+  padding: 0 20px;
+}
+.contactArea .flexContactArea .contactInfo div .info .headInfo {
+  color: gray;
+  font-size: 20px;
+  font-weight: bold;
+}
+.contactArea .flexContactArea .contactInfo div .info .valueInfo span {
+  font-weight: bold;
+}
+.contactArea .flexContactArea .form {
+  box-shadow: 0 0 25px -10px gray;
+}
+.contactArea .flexContactArea .form .formInputs {
+  display: flex;
+  flex-flow: wrap;
+  padding: 20px;
+}
+.contactArea .flexContactArea .form .formInputs .name,
+.contactArea .flexContactArea .form .formInputs .email2 {
+  width: 50%;
+  margin-bottom: 20px;
+}
+.contactArea .flexContactArea .form .formInputs .name {
+  padding-right: 10px;
+}
+
+.contactArea .flexContactArea .form .formInputs .email2 {
+  padding-left: 10px;
+}
+.contactArea .flexContactArea .form .formInputs .submitBtn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.contactArea .flexContactArea .form .formInputs .subject,
+.contactArea .flexContactArea .form .formInputs .textArea {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.contactArea .flexContactArea .form .formInputs div input,
+.contactArea .flexContactArea .form .formInputs .textArea textarea {
+  width: 100%;
+  padding: 20px 15px;
+  outline: none;
+  border: solid 2px var(--lightModeColor2, #eee);
+  transition: border 0.5s;
+}
+.contactArea .flexContactArea .form .formInputs .textArea textarea {
+  margin-bottom: 50px;
+  resize: vertical;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.contactArea .flexContactArea .form .formInputs .submitBtn input {
+  width: fit-content;
+  padding: 15px 40px;
+  box-sizing: content-box;
+  border-radius: 40px;
+  color: var(--lightModeColor1, white);
+  background-color: var(--lightModeColor3, #ce1212);
+  font-size: 16px;
+  font-weight: lighter;
+  border: none;
+  transition: background-color 0.5s;
+  cursor: pointer;
+}
+.contactArea .flexContactArea .form .formInputs .submitBtn input:hover {
+  background-color: var(--ligntModeColor3Hover, #e61414);
+}
+.contactArea .flexContactArea .form .formInputs div input:focus,
+.contactArea .flexContactArea .form .formInputs .textarea textarea:focus {
+  border-color: var(--lightModeColor3, #ce1212);
+}
+/*Footer*/
+.footer {
+  background-color: black;
+  color: white;
+  padding: 50px 0;
+}
+.footer .flexFooter {
+  display: flex;
+  justify-content: space-between;
+}
+.footer .flexFooter .section1,
+.footer .flexFooter .section3 {
+  width: 24%;
+}
+.footer .flexFooter .section2 {
+  width: 48%;
+}
+.footer .flexFooter .section1 h5 {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  margin: 0;
+}
+
+.footer .flexFooter .section1 h5 img {
+  width: 40px;
+  margin-right: 10px;
+}
+.footer .flexFooter .section1 h5 span {
+  color: var(--lightModeColor3, #ce1212);
+}
+.footer .flexFooter .section1 .infoAboutMealify {
+  font-size: 18px;
+}
+.footer .flexFooter .section1 h6 {
+  font-size: 23px;
+  text-align: center;
+  border-bottom: 1px solid gray;
+  margin: 0;
+  padding-bottom: 15px;
+}
+.footer .flexFooter .section1 .mediaIcons {
+  display: flex;
+  justify-content: space-around;
+  font-size: 25px;
+  padding-top: 20px;
+}
+.footer .flexFooter .section1 .mediaIcons a {
+  color: white;
+}
+.footer .flexFooter .section2 h6 {
+  margin: 0;
+  font-size: 23px;
+}
+.footer .flexFooter .section2 .newUpdates {
+  font-size: 18px;
+}
+.footer .flexFooter .section2 form .inputAndButtonFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer .flexFooter .section2 form input {
+  width: 78%;
+  padding: 0 15px;
+  height: 45px;
+  outline: none;
+  border: 2px solid gray;
+}
+.footer .flexFooter .section2 form button {
+  display: flex;
+  flex-flow: nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  font-size: 16px;
+  height: 45px;
+  padding: 0 15px;
+  border: none;
+  color: white;
+  background-color: #ce1212;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.footer .flexFooter .section2 form button:hover {
+  background-color: #e61414;
+}
+
+.footer .flexFooter .section2 .quickLinks ul {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.footer .flexFooter .section2 .quickLinks ul li {
+  width: 48%;
+  padding: 5px 0;
+  transition: all 0.5s;
+  font-size: 18px;
+}
+.footer .flexFooter .section2 .quickLinks ul li:hover {
+  transform: translateX(10px);
+  background-color: #252525;
+}
+.footer .flexFooter .section2 .quickLinks ul li a {
+  color: white;
+  padding-left: 3px;
+}
+.footer .flexFooter .section3 h6 {
+  margin-top: 0;
+  font-size: 23px;
+}
+.footer .flexFooter .section3 div {
+  margin: 20px 0;
+}
+.footer .flexFooter .section3 .loc {
+  display: flex;
+  align-items: center;
+}
+.footer .flexFooter .section3 .email3 a,
+.footer .flexFooter .section3 .phone a {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer .flexFooter .section3 div a {
+  color: white;
+  font-size: 20px;
+}
+.footer .flexFooter .section3 a i {
+  font-size: 25px;
+  color: #ce1212;
+  margin-right: 15px;
+}

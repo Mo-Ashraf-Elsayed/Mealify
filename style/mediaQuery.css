@@ -1,0 +1,267 @@
+@media screen and (max-width: 1200px) {
+  .header .flexHeader {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .header .flexHeader .logo {
+    width: 40%;
+  }
+  .header .flexHeader .darkAndLightMood {
+    width: 40%;
+  }
+  .header .flexHeader .menuTag {
+    display: flex;
+  }
+  .header .flexHeader ul {
+    display: none;
+  }
+  .homeArea {
+    height: auto;
+  }
+  .homeArea .flexHomeArea .content {
+    width: 60%;
+  }
+  .homeArea .flexHomeArea .photo {
+    width: 40%;
+  }
+  .footer .flexFooter {
+    flex-flow: wrap;
+  }
+  .footer .flexFooter .section1,
+  .footer .flexFooter .section3 {
+    margin-bottom: 20px;
+    width: 48%;
+    order: 1;
+  }
+  .footer .flexFooter .section2 {
+    width: 100%;
+    order: 2;
+  }
+}
+@media screen and (max-width: 992px) {
+  .homeArea .flexHomeArea {
+    flex-flow: wrap;
+    justify-content: center;
+  }
+  .homeArea .flexHomeArea .content {
+    width: 100%;
+    order: 2;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  .homeArea .flexHomeArea .content h2 {
+    margin-top: 20px;
+    width: 60%;
+  }
+
+  .homeArea .flexHomeArea .photo {
+    width: 80%;
+    order: 1;
+  }
+  .chefsArea .flexChefsArea {
+    flex-wrap: wrap;
+  }
+  .chefsArea .flexChefsArea .masterChef,
+  .chefsArea .flexChefsArea .patissier,
+  .chefsArea .flexChefsArea .cook {
+    width: calc(95% / 2);
+    margin-bottom: 50px;
+  }
+  .galleryArea .gridGalleryArea {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "pizza beefSteaks"
+      "pizza beefSteaks"
+      "burger beefSteaks"
+      "burger beefSteaks"
+      "levitationPizza beefSteaks"
+      "levitationPizza crispyFriedChicken"
+      "levitationPizza crispyFriedChicken"
+      "levitationPizza kebab"
+      "levitationPizza kebab"
+      "frittata kebab"
+      "frittata ."
+      "frittata .";
+  }
+  .contactArea .flexContactArea .form .formInputs .name,
+  .contactArea .flexContactArea .form .formInputs .email2 {
+    width: 100%;
+  }
+  .contactArea .flexContactArea .form .formInputs .name {
+    padding-right: 0;
+  }
+
+  .contactArea .flexContactArea .form .formInputs .email2 {
+    padding-left: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .chefsArea .flexChefsArea .masterChef,
+  .chefsArea .flexChefsArea .patissier,
+  .chefsArea .flexChefsArea .cook {
+    width: 100%;
+  }
+  .galleryArea .gridGalleryArea {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "pizza"
+      "pizza"
+      "burger"
+      "burger"
+      "levitationPizza"
+      "levitationPizza"
+      "levitationPizza"
+      "levitationPizza"
+      "frittata"
+      "frittata"
+      "frittata"
+      "beefSteaks"
+      "beefSteaks"
+      "beefSteaks"
+      "beefSteaks"
+      "crispyFriedChicken"
+      "crispyFriedChicken"
+      "kebab"
+      "kebab"
+      "kebab";
+  }
+  .contactArea .flexContactArea .contactInfo > div {
+    width: 100%;
+  }
+  .footer .flexFooter .section1,
+  .footer .flexFooter .section3 {
+    width: 100%;
+    order: 0;
+  }
+  .footer .flexFooter .section2 {
+    margin-bottom: 20px;
+    width: 100%;
+    order: 0;
+  }
+}
+@media screen and (max-width: 700px) {
+  .homeArea .flexHomeArea .content h2 {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 530px) {
+  .homeArea .flexHomeArea .content h2 {
+    width: 100%;
+  }
+  .homeArea .flexHomeArea .content p {
+    width: 100%;
+  }
+  .footer .flexFooter .section2 form .inputAndButtonFooter {
+    flex-flow: wrap;
+  }
+  .footer .flexFooter .section2 form input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .footer .flexFooter .section2 form button {
+    width: 100%;
+  }
+  .footer .flexFooter .section1 h5 {
+    font-size: 25px;
+  }
+  .footer .flexFooter .section1 .infoAboutMealify {
+    font-size: 16px;
+  }
+  .footer .flexFooter .section1 h6 {
+    font-size: 20px;
+  }
+  .footer .flexFooter .section2 h6 {
+    font-size: 20px;
+  }
+  .footer .flexFooter .section2 .newUpdates {
+    font-size: 16px;
+  }
+  .footer .flexFooter .section2 form button {
+    font-size: 16px;
+  }
+  .footer .flexFooter .section2 .quickLinks ul li {
+    font-size: 16px;
+  }
+  .footer .flexFooter .section3 h6 {
+    font-size: 20px;
+  }
+  .footer .flexFooter .section3 div a {
+    font-size: 18px;
+  }
+  .footer .flexFooter .section3 a i {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 425px) {
+  h3 {
+    font-size: 40px;
+  }
+  .homeArea .flexHomeArea .content h2 {
+    font-size: 60px;
+  }
+  .homeArea .flexHomeArea .content .btns {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+  }
+
+  .homeArea .flexHomeArea .content .btns .idBtn {
+    margin-right: 5px;
+  }
+  .contactArea .flexContactArea .contactInfo div .icons2 {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  .contactArea .flexContactArea .contactInfo div .info {
+    width: calc(100% - 40px);
+  }
+  .contactArea .flexContactArea .contactInfo div .info p {
+    padding: 0 15px;
+  }
+  .contactArea .flexContactArea .contactInfo div .info .headInfo {
+    font-size: 18px;
+  }
+  .contactArea .flexContactArea .contactInfo div .info .valueInfo {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 330px) {
+  :root {
+    --heightOfHeader: 120px;
+  }
+  .header {
+    height: var(--heightOfHeader);
+  }
+  .header .flexHeader .logo {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .header .flexHeader .darkAndLightMood {
+    width: 50%;
+    justify-content: flex-start;
+  }
+  .header .flexHeader .menuTag {
+    width: 50%;
+    justify-content: flex-start;
+  }
+  .homeArea .flexHomeArea .photo {
+    width: 100%;
+  }
+  .homeArea .flexHomeArea .content .btns .idBtn {
+    margin-bottom: 30px;
+  }
+  .homeArea .flexHomeArea .content .btns .idBtn {
+    margin-right: 0;
+  }
+  .chefsArea .flexChefsArea div .aboutChef h4 {
+    margin: 0;
+    font-size: 16px;
+  }
+  .contactArea .flexContactArea .form .formInputs .submitBtn input {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
